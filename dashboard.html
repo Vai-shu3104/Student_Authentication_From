@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Dashboard</title>
+    <style>
+        body {
+            background-color: white;
+            font-family: Arial;
+        }
+        .box {
+            width: 350px;
+            margin: 80px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        h2 {
+            color: blue;
+            text-align: center;
+        }
+        .logout {
+            background-color: red;
+            color: white;
+            padding: 10px;
+            border: none;
+            width: 100%;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Student Dashboard</h2>
+
+    <p><strong>Name:</strong> {{ name }}</p>
+    <p><strong>Email:</strong> {{ email }}</p>
+
+    <form method="POST" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button class="logout">Logout</button>
+    </form>
+</div>
+
+</body>
+</html>
